@@ -4,7 +4,7 @@ app.set('port', (process.env.PORT || 9000));
 var server = require('http').Server(app);
 var io = require('socket.io')(server);
 var redis = require('redis');
-
+var redisDoubleConnectionReseter = 0;
 var redisServer = {
     host: 'redis-17428.c10.us-east-1-4.ec2.cloud.redislabs.com',
     port: 17428
@@ -22,6 +22,9 @@ io.on('connection', function(socket) {
     });
     var redisClient = redis.createClient(redisServer);
     redisClient.on("message", function(channel, message) {
+        if (++redisDoubleConnectionReseter % 2 === 0) {
+            return false;
+        }
         try {
             console.log("mew message in queue " + message + "channel" + channel);
             io.emit('new Message', message);
