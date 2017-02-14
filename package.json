@@ -10,9 +10,6 @@
         "socket.io-emitter": "^2.0.0",
         "socket.io-redis": "^3.1.0"
     },
-    "scripts": {
-        "start": "index.js"
-    },
     "main": "index.js",
     "devDependencies": {},
     "repository": {
