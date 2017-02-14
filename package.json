@@ -1,5 +1,5 @@
 {
-    "name": "bomberossro",
+    "name": "bomberosro",
     "version": "0.0.1",
     "description": "bomberos santa rosa de osos, ant-co",
     "dependencies": {
@@ -9,6 +9,9 @@
         "socket.io": "^1.7.2",
         "socket.io-emitter": "^2.0.0",
         "socket.io-redis": "^3.1.0"
+    },
+    "scripts": {
+        "start": "node index.js"
     },
     "main": "index.js",
     "devDependencies": {},
