@@ -1,4 +1,6 @@
+var cool = require('cool-ascii-faces');
 var app = require('express')();
+app.set('port', (process.env.PORT || 9000));
 var server = require('http').Server(app);
 var io = require('socket.io')(server);
 var redis = require('redis');
@@ -40,6 +42,6 @@ app.get('/', function(req, res) {
 
 
 
-server.listen(9000, function() {
-    console.log('listening on port *9000');
+server.listen((process.env.PORT || 9000), function() {
+    console.log('listening on port *' + (process.env.PORT || 9000));
 });

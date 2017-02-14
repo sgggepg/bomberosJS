@@ -1,30 +1,31 @@
 {
-    "name": "bomberosro",
-    "version": "0.0.1",
-    "description": "bomberos santa rosa de osos, ant-co",
-    "dependencies": {
-        "express": "^4.14.1",
-        "ioredis": "^2.5.0",
-        "redis": "^2.6.5",
-        "socket.io": "^1.7.2",
-        "socket.io-emitter": "^2.0.0",
-        "socket.io-redis": "^3.1.0"
-    },
-    "scripts": {
-        "start": "node index.js"
-    },
-    "main": "index.js",
-    "devDependencies": {},
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/sgggepg/bomberossro.git"
-    },
-    "keywords": [
-        "bomberos",
-        "fireman",
-        "voluntarios",
-        "volunteer"
-    ],
-    "author": "Santiago G",
-    "license": "ISC"
+  "name": "bomberosro",
+  "version": "0.0.1",
+  "description": "bomberos santa rosa de osos, ant-co",
+  "dependencies": {
+    "cool-ascii-faces": "1.3.4",
+    "express": "^4.14.1",
+    "ioredis": "^2.5.0",
+    "redis": "^2.6.5",
+    "socket.io": "^1.7.2",
+    "socket.io-emitter": "^2.0.0",
+    "socket.io-redis": "^3.1.0"
+  },
+  "scripts": {
+    "start": "node index.js"
+  },
+  "main": "index.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sgggepg/bomberossro.git"
+  },
+  "keywords": [
+    "bomberos",
+    "fireman",
+    "voluntarios",
+    "volunteer"
+  ],
+  "author": "Santiago G",
+  "license": "ISC"
 }
