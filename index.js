@@ -10,15 +10,7 @@ var redisServer = {
     port: 17428
 };
 
-var redisClient = redis.createClient(redisServer);
-redisClient.on("message", function(channel, message) {
-    try {
-        console.log("mew message in queue " + message + "channel" + channel);
-        io.emit('new Message', message);
-    } catch (err) {
 
-    }
-});
 io.on('connection', function(socket) {
     console.log('user connected');
     io.emit('user connected');
@@ -28,7 +20,15 @@ io.on('connection', function(socket) {
     socket.on('disconnect', function() {
         redisClient.quit();
     });
+    var redisClient = redis.createClient(redisServer);
+    redisClient.on("message", function(channel, message) {
+        try {
+            console.log("mew message in queue " + message + "channel" + channel);
+            io.emit('new Message', message);
+        } catch (err) {
 
+        }
+    });
     redisClient.subscribe('message');
 
 });
