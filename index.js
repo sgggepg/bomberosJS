@@ -15,7 +15,7 @@ io.on('connection', function(socket) {
     console.log('user connected');
     io.emit('user connected');
     socket.on('new Message', function(msg) {
-        io.emit('new Message', {'message': message});
+        io.emit('new Message', {'message': msg});
     });
     socket.on('disconnect', function() {
         redisClient.quit();
