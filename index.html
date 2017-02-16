@@ -59,7 +59,7 @@
             $('#messages').append($('<li>').text('usuario conectado'));
         });
         socket.on('new Message', function(msg) {
-            $('#messages').append($('<li>').text(msg));
+            $('#messages').append($('<li>').text(msg.message));
         });
     </script>
 </head>

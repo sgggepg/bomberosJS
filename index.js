@@ -29,7 +29,7 @@ io.on('connection', function(socket) {
         avoidDoubleMessages = message;
         try {
             console.log("mew message in queue " + message + "channel" + channel);
-            io.emit('new Message', message);
+            io.emit('new Message', {'message': message});
         } catch (err) {
 
         }
