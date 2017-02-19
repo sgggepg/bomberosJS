@@ -2,6 +2,7 @@ var cool = require('cool-ascii-faces');
 var app = require('express')();
 app.set('port', (process.env.PORT || 9000));
 var server = require('http').Server(app);
+var db = require('Models/db');
 var io = require('socket.io')(server);
 var redis = require('redis');
 var avoidDoubleMessages = '';
@@ -15,7 +16,7 @@ io.on('connection', function(socket) {
     console.log('user connected');
     io.emit('user connected');
     socket.on('new Message', function(msg) {
-        io.emit('new Message', {message:msg});
+        io.emit('new Message', { message: msg });
     });
     socket.on('disconnect', function() {
         redisClient.quit();
@@ -29,7 +30,7 @@ io.on('connection', function(socket) {
         avoidDoubleMessages = message;
         try {
             console.log("mew message in queue " + message + "channel" + channel);
-            io.emit('new Message', {'message': message});
+            io.emit('new Message', { 'message': message });
         } catch (err) {
 
         }

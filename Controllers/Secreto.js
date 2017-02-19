@@ -1,0 +1,1 @@
+var Secreto = require("../Models/Secreto").Secreto;
