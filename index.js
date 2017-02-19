@@ -2,7 +2,7 @@ var cool = require('cool-ascii-faces');
 var app = require('express')();
 app.set('port', (process.env.PORT || 9000));
 var server = require('http').Server(app);
-var db = require('Models/db');
+var db = require('./Models/db');
 var io = require('socket.io')(server);
 var redis = require('redis');
 var avoidDoubleMessages = '';
